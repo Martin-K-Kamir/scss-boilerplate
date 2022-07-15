@@ -2,7 +2,7 @@
 .sidebar {
 	display   : flex;
 	flex-wrap : wrap;
-	gap       : var(--s1);
+	gap       : var(--space);
 
 	& > :first-child {
 		flex-basis : 50rem;
