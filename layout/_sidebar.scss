@@ -2,10 +2,10 @@
 .sidebar {
 	display   : flex;
 	flex-wrap : wrap;
-	gap       : var(--space);
+	gap       : var(--space, #{$space});
 
 	& > :first-child {
-		flex-basis : 50rem;
+		flex-basis : var(--measure, #{$measure});
 		flex-grow  : 1;
 	}
 

@@ -1,34 +1,32 @@
-@layer reset, base, components, layout, pages, utilities;
-
-@layer reset {
-	@import 'base/reset';
-}
-
-@layer base {
-	@import 'abstracts/all';
-	@import 'base/base';
-	@import 'base/animations';
-	@import 'base/typography';
-}
-
-@layer components {
-	@import 'components/buttons';
-}
-
-@layer layout {
-	@import 'layout/grid';
-	@import 'layout/switcher';
-	@import 'layout/stack';
-	@import 'layout/box';
-	@import 'layout/cluster';
-	@import 'layout/sidebar';
-	@import 'layout/center';
-}
-
-@layer pages {
-	@import 'pages/home';
-}
-
-@layer utilities {
-	@import 'base/utilities';
-}
+@use 'abstracts/variables' as *;
+@import 'base/utilities';
+//
+//@layer reset, base, components, layout, pages, utilities;
+//
+//@layer base {
+//	@import 'base/base';
+//	@import 'base/animations';
+//	@import 'base/typography';
+//}
+//
+//@layer components {
+//	@import 'components/buttons';
+//}
+//
+//@layer layout {
+//	@import 'layout/grid';
+//	@import 'layout/switcher';
+//	@import 'layout/stack';
+//	@import 'layout/box';
+//	@import 'layout/cluster';
+//	@import 'layout/sidebar';
+//	@import 'layout/center';
+//}
+//
+//@layer pages {
+//	@import 'pages/home';
+//}
+//
+//@layer utilities {
+//
+//}

@@ -1,0 +1,9 @@
+@use '../abstracts/modules/generate';
+
+$config : (
+);
+
+
+:root {
+	@include generate.all($config);
+}

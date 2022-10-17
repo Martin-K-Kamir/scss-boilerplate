@@ -1,21 +1,15 @@
 
 .switcher {
-	--threshold : 30rem;
-
 	display   : flex;
 	flex-wrap : wrap;
-	gap       : var(--space);
+	gap       : var(--space, #{$space});
 
-	& > * {
-		flex-grow  : 1;
-		flex-basis : calc((var(--threshold) - 100%) * 999);
+	& > img {
+		inline-size : 50%;
 	}
 
-	//& > :nth-last-child(n+ 4),
-	//& > :nth-last-child(n+ 4) ~ * {
-	//	flex-basis : 100%;
-	//}
+	& > * {
+		flex-basis : calc((var(--measure, #{$measure}) - 100%) * 999);
+		flex-grow  : 1;
+	}
 }
-
-
-
