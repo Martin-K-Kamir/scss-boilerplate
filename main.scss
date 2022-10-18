@@ -1,9 +1,11 @@
-@use 'abstracts/variables' as *;
-@import 'base/utilities';
-//
 //@layer reset, base, components, layout, pages, utilities;
 //
+//@layer reset {
+//	@import 'base/reset';
+//}
+//
 //@layer base {
+//	@import 'abstracts/all';
 //	@import 'base/base';
 //	@import 'base/animations';
 //	@import 'base/typography';
@@ -28,5 +30,6 @@
 //}
 //
 //@layer utilities {
-//
 //}
+
+@import 'base/utilities';
