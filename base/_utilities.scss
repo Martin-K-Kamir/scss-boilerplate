@@ -1,8 +1,35 @@
 @use '../abstracts/modules/generate';
 
+$map    : (
+		'fs-1' : 12px,
+		'fs-2' : 14px,
+		'fs-3' : 16px,
+		'fs-4' : 18px,
+		'fs-5' : 20px,
+);
+
+$map2   : (
+		'fs-4' : 25px,
+		'fs-5' : 50px,
+);
+
 $config : (
-		'font-types' : (
-				'src' : (1rem, 1.5rem, 2rem),
+		'fluid-font-types' : (
+			//'src' : (1rem, 1.4rem, 1.6rem, 1.8rem, 2rem, 2.5rem),
+			//	'src' : $map,
+				'base' : 1rem,
+				'ratio' : 1.5,
+				'length' : 5,
+			//'suffix' : nato,
+			//'break-at' : 'min',
+			//'breakpoints' : (
+			//		'600px' : (
+			//				'src' : $map2,
+			//		),
+			//	//'480px' : (
+			//	//		'base' : 0.8rem,
+			//	//),
+			//),
 		)
 );
 
@@ -18,3 +45,13 @@ $config : (
 	@include generate.all($config);
 }
 
+// - delete unused stuff ✅
+// - improve the architecture (separate everything) ✅
+// - make it work again
+// - refactor
+// - improve configuration
+// - add new features:
+//    - custom media properties
+//    - xxx
+//    - xxx
+//    - xxx
