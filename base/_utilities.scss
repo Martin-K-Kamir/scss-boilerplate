@@ -1,6 +1,9 @@
 @use '../abstracts/modules/generate';
+@use '../abstracts/modules/math' as *;
+@use 'sass:math';
+@use 'sass:list';
 
-$map    : (
+$map     : (
 		'fs-1' : 12px,
 		'fs-2' : 14px,
 		'fs-3' : 16px,
@@ -8,18 +11,29 @@ $map    : (
 		'fs-5' : 20px,
 );
 
-$map2   : (
+$map2    : (
 		'fs-4' : 25px,
 		'fs-5' : 50px,
 );
 
-$config : (
-		'fluid-font-types' : (
+$list    : (
+		clamped(1rem, 2rem, 300px, 1000px),
+		clamped(3rem, 5rem, 300px, 1000px),
+		clamped(6rem, 8rem, 300px, 1000px),
+		clamped(9rem, 12rem, 300px, 1000px),
+		clamped(13rem, 16rem, 300px, 1000px));
+
+// font, space types
+$config  : (
+		'font-types' : (
 			//'src' : (1rem, 1.4rem, 1.6rem, 1.8rem, 2rem, 2.5rem),
 			//	'src' : $map,
+			//	'src' : $list,
 				'base' : 1rem,
-				'ratio' : 1.5,
-				'length' : 5,
+				'ratio' : 1.4,
+			//'base' : ('min' : 1rem, 'max': 1.9rem),
+			//'ratio' : ('min' : 1.2, 'max': 1.44),
+				'length' : 9,
 			//'suffix' : nato,
 			//'break-at' : 'min',
 			//'breakpoints' : (
@@ -32,6 +46,35 @@ $config : (
 			//),
 		)
 );
+$config2 : (
+		'colors': (
+				'src' : (
+						'accent' : hsl(248, 83%, 47%),
+						'neutral' : hsl(0, 0%, 32%),
+				),
+			//	'src' : (
+			//			'accent' : (#563ffd, #3114f1, #130186),
+			//			'neutral' : (#949494, #515151, #0c0c0c),
+			//	),
+			//	'tints' : (20%, 50%),
+			//	'shades' : (20%, 50%),
+			//'suffix' : 'color-adjectives',
+				'tints' : (
+						'accent' : (20%, 40%),
+						'neutral' : (20%, 50%, 80%),
+				),
+			//'themes' : (
+			//		'dark' : (
+			//				'accent' : #120395,
+			//				'neutral' : #2c2c2c,
+			//		),
+			//		'xmas' : (
+			//				'accent' : #059e00,
+			//				'neutral' : #ffffff,
+			//		),
+			//),
+		),);
+
 
 //@include generate.config(
 //	$font-types: (
@@ -42,7 +85,7 @@ $config : (
 //);
 
 :root {
-	@include generate.all($config);
+	@include generate.all($config2);
 }
 
 // - delete unused stuff ✅
@@ -50,8 +93,9 @@ $config : (
 // - make it work again
 // - refactor
 // - improve configuration
+// - testing
 // - add new features:
-//    - custom media properties
-//    - xxx
-//    - xxx
-//    - xxx
+//    - suffix as string
+//    - validators
+//    - pre-build configs, maps, etc...
+//    - config from @use
