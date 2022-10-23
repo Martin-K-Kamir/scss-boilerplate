@@ -3,7 +3,7 @@
 @use 'sass:math';
 @use 'sass:list';
 
-$map     : (
+$map         : (
 		'fs-1' : 12px,
 		'fs-2' : 14px,
 		'fs-3' : 16px,
@@ -11,30 +11,28 @@ $map     : (
 		'fs-5' : 20px,
 );
 
-$map2    : (
+$map2        : (
 		'fs-4' : 25px,
 		'fs-5' : 50px,
 );
 
-$list    : (
+$list        : (
 		clamped(1rem, 2rem, 300px, 1000px),
 		clamped(3rem, 5rem, 300px, 1000px),
 		clamped(6rem, 8rem, 300px, 1000px),
-		clamped(9rem, 12rem, 300px, 1000px),
-		clamped(13rem, 16rem, 300px, 1000px));
+);
 
 // font, space types
-$config  : (
-		'font-types' : (
-			//'src' : (1rem, 1.4rem, 1.6rem, 1.8rem, 2rem, 2.5rem),
+$config      : (
+		'fluid-font-types' : (
+			//'src' : $map2,
 			//	'src' : $map,
 			//	'src' : $list,
-				'base' : 1rem,
-				'ratio' : 1.4,
-			//'base' : ('min' : 1rem, 'max': 1.9rem),
-			//'ratio' : ('min' : 1.2, 'max': 1.44),
-				'length' : 9,
-			//'suffix' : nato,
+			//	'base' : 1rem,
+			//'ratio' : 1,
+				'length' : 5,
+				'base' : ('min' : 1rem, 'max': 1.9rem),
+				'ratio' : ('min' : 'minor-second', 'max': 1.44),
 			//'break-at' : 'min',
 			//'breakpoints' : (
 			//		'600px' : (
@@ -44,58 +42,58 @@ $config  : (
 			//	//		'base' : 0.8rem,
 			//	//),
 			//),
-		)
+		),
 );
-$config2 : (
+$config2     : (
 		'colors': (
 				'src' : (
-						'accent' : hsl(248, 83%, 47%),
-						'neutral' : hsl(0, 0%, 32%),
+						'accent' : (hsl(248, 80%, 68%)),
+						'neutral' : (hsl(0, 0%, 51%)),
 				),
-			//	'src' : (
-			//			'accent' : (#563ffd, #3114f1, #130186),
-			//			'neutral' : (#949494, #515151, #0c0c0c),
-			//	),
-			//	'tints' : (20%, 50%),
-			//	'shades' : (20%, 50%),
-			//'suffix' : 'color-adjectives',
-				'tints' : (
-						'accent' : (20%, 40%),
-						'neutral' : (20%, 50%, 80%),
-				),
-			//'themes' : (
-			//		'dark' : (
-			//				'accent' : #120395,
-			//				'neutral' : #2c2c2c,
-			//		),
-			//		'xmas' : (
-			//				'accent' : #059e00,
-			//				'neutral' : #ffffff,
-			//		),
-			//),
-		),);
+				'tints' : (20%, 30%),
+				'format' : 'hex',
+		),
+);
 
+$measures123 : (
+		'penis-1' : 10ch,
+		'penis-2' : 33ch,
+		'penis-3' : 33ch,
+) !default;
 
-//@include generate.config(
-//	$font-types: (
-//			'base' : 1rem,
-//			'ratio' : 1.25,
-//			'length' : 5,
-//	)
-//);
+$measures12  : (
+		'asdas-1' : 22ch,
+		'asdas-2' : 44ch,
+) !default;
+
+$config3     : (
+		'utilities' : (
+			//'auto' : true,
+				'src' : (generate.$shadows, generate.$borders, generate.$aspect-ratios),
+		),
+);
+
 
 :root {
 	@include generate.all($config2);
 }
 
+
 // - delete unused stuff ✅
 // - improve the architecture (separate everything) ✅
-// - make it work again
-// - refactor
-// - improve configuration
+// - make it work again ✅
+//    - types scale ✅
+//    - colors ✅
+//    - properties ✅
+//    - classes ✅
+// - refactor ✅
 // - testing
+//    - font-types / space-types
 // - add new features:
-//    - suffix as string
+//    - suffix as string ✅
 //    - validators
-//    - pre-build configs, maps, etc...
-//    - config from @use
+//    - easy configuration
+//    - merge property and class generators ✅
+//    - able to change name of the property for space generates
+//    - var(--space-0) to have 0 space
+//    - to be able change $max-width and min-width for clamp function
